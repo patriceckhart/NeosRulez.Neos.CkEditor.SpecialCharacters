@@ -1,0 +1,19 @@
+{
+  "description": "Special characters and emojis for Neos CK Editor.",
+  "type": "neos-plugin",
+  "name": "neosrulez/neos-ckeditor-specialcharacters",
+  "require": {
+    "neos/neos": "^7.0 || ^8.0",
+    "neos/neos-ui": "^7.0 || ^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NeosRulez\\Neos\\CkEditor\\SpecialCharacters\\": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "NeosRulez.Neos.CkEditor.SpecialCharacters"
+    }
+  }
+}

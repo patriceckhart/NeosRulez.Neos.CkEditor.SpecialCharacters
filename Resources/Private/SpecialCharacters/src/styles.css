@@ -1,0 +1,9 @@
+.gridSelectBox { position: relative; }
+.gridSelectBoxButton { white-space: nowrap !important; background:#323232 !important; outline:none !important; }
+.gridSelectBoxButton:focus, .gridSelectBoxButton:active { outline:none !important; }
+.gridSelectBoxButtonSpan { white-space: nowrap !important; }
+.gridSelectBoxButtonChevron { margin-left:0.5rem; }
+.gridSelectBoxSelect { position: absolute; left:0; top:0; width:20.5rem; height:20rem; background:#000; z-index:100; margin-top:41px; box-shadow: 0 5px 5px rgb(0 0 0 / 20%); border:2px solid #323232; border-top:0; overflow:hidden; overflow-y: scroll; }
+
+.gridSelectBoxSelectButton { border:0; background:none; padding:0; width:2rem; height:2rem; line-height:2rem; color:#fff; outline:none; font-size:1.2rem; cursor: pointer; }
+.gridSelectBoxSelectButton:hover, .gridSelectBoxSelectButton:active, .gridSelectBoxSelectButton:focus { background:#00ADEE; }
