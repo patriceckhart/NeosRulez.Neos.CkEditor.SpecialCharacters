@@ -1,5 +1,5 @@
 {
-  "description": "Special characters and emojis for Neos CK Editor.",
+  "description": "Special characters and emojis for Neos CMS CKEditor.",
   "type": "neos-plugin",
   "name": "neosrulez/neos-ckeditor-specialcharacters",
   "require": {
