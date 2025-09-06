@@ -9,11 +9,14 @@ Neos:
           'NeosRulez.Neos.CkEditor.SpecialCharacters':
             resource: '${"resource://NeosRulez.Neos.CkEditor.SpecialCharacters/Public/Plugin.js"}'
       frontendConfiguration:
+        'NeosRulez.Neos.CkEditor': '${Configuration.setting(''NeosRulez.Neos.CkEditor'')}'
         'NeosRulez.Neos.CkEditor.SpecialCharacters': '${Configuration.setting(''NeosRulez.Neos.CkEditor.SpecialCharacters'')}'
         'NeosRulez.Neos.CkEditor.Emojis': '${Configuration.setting(''NeosRulez.Neos.CkEditor.Emojis'')}'
 NeosRulez:
   Neos:
     CkEditor:
+      symbolsLabel: "Special characters"
+      emojisLabel: "Smilies"
       SpecialCharacters:
         arrows:
           - name: left arrow
