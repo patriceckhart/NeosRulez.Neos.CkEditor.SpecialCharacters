@@ -27,6 +27,8 @@ manifest('NeosRulez.Neos.CkEditor.SpecialCharacters', {}, (globalRegistry, {fron
 
     const symbols = frontendConfiguration['NeosRulez.Neos.CkEditor.SpecialCharacters'].symbols;
     const emojis = frontendConfiguration['NeosRulez.Neos.CkEditor.Emojis'];
+		const symbolsLabel = frontendConfiguration['NeosRulez.Neos.CkEditor'].symbolsLabel || "Special characters";
+		const emojisLabel = frontendConfiguration['NeosRulez.Neos.CkEditor'].emojisLabel || "Emojis";
 
     ckEditorConfig.set('NeosRulez.Neos.CkEditor.SpecialCharacter_Symbols', (ckEditorConfiguration, {editorOptions}) => {
         const editing = SpecialCharacterEditing(symbols);
@@ -44,14 +46,18 @@ manifest('NeosRulez.Neos.CkEditor.SpecialCharacters', {}, (globalRegistry, {fron
     richtextToolbar.set('SpecialCharacters_Symbols', {
         component: SpecialCharacterSelector,
         isVisible: function(editorOptions, formattingUnderCursor) {
-            return true;
+					return editorOptions.specialCharacters === true || editorOptions.specialCharacters === 'true';
         },
         metadata: symbolsList,
-        label: 'Special characters'
+        label: symbolsLabel
     });
 
-    ckEditorConfig.set('SpecialCharactersForCkEditor', addSpecialCharacters);
-
+    ckEditorConfig.set('NeosRulez.SpecialCharacters.addSpecialCharacters',(ckEditorConfiguration, {editorOptions}) => {
+			const editing = SpecialCharacterEditing(symbolsList);
+			ckEditorConfiguration.plugins = ckEditorConfiguration.plugins || [];
+			ckEditorConfiguration.plugins.push(editing);
+			return ckEditorConfiguration;
+		});
 
     const emojisList = Object.keys(emojis)
         .map((item, i) => ({
@@ -69,10 +75,10 @@ manifest('NeosRulez.Neos.CkEditor.SpecialCharacters', {}, (globalRegistry, {fron
     richtextToolbar.set('SpecialCharacters_Emojis', {
         component: SpecialCharacterSelector,
         isVisible: function(editorOptions, formattingUnderCursor) {
-            return true;
+					return editorOptions.emojis === true || editorOptions.emojis === 'true';
         },
         metadata: emojisList,
-        label: 'Emojis'
+        label: emojisLabel
     });
 
 
